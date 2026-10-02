@@ -132,6 +132,44 @@ http://127.0.0.1:8000/
 
 ---
 
+## 🧪 Testing the API with Bruno
+
+We recommend using **[Bruno](https://www.usebruno.com/)** to test and interact with the API endpoints throughout these sessions. Bruno is a fast, lightweight, and open-source API client (an offline-first, Git-friendly alternative to Postman).
+
+### 📥 Download & Install Bruno
+- **Official Website:** [usebruno.com](https://www.usebruno.com/)
+- **Download Page:** [usebruno.com/downloads](https://www.usebruno.com/downloads)
+
+You can also install it via command-line:
+- **Windows (Winget):**
+  ```powershell
+  winget install Bruno.Bruno
+  ```
+- **macOS (Homebrew):**
+  ```bash
+  brew install bruno
+  ```
+
+### 🎯 How to Use Bruno with this Project
+1. **Open Bruno** and click **"Create Collection"** (e.g., name it `DRF-Learning`).
+2. **Create New Requests** for the endpoints you are testing:
+   - **`GET`** `http://127.0.0.1:8000/api/` — Test retrieving items.
+   - **`POST`** `http://127.0.0.1:8000/api/` — Test creating items. Select the **Body -> JSON** tab and pass request payload:
+     ```json
+     {
+       "name": "Laptop",
+       "price": 25000
+     }
+     ```
+   - **`PUT` / `PATCH`** `http://127.0.0.1:8000/api/<id>/` — Test updating existing records.
+   - **`DELETE`** `http://127.0.0.1:8000/api/<id>/` — Test removing records.
+3. **Verify Responses & Status Codes**:
+   - Check the response body (JSON).
+   - Check the HTTP status code (`200 OK`, `201 Created`, `400 Bad Request`, `204 No Content`).
+
+---
+
 ## 🤝 Contributing & Community
 
 Maintained with ❤️ by the **Infinity Explorers** team. Feel free to open issues or submit pull requests for improvements and additions!
+
